@@ -4,7 +4,9 @@ from the ``vehicleenquiry.service.gov.uk`` website.
 """
 import json
 
+# Third-party libraries; these will need to be installed separately
 import requests
+from six.moves import urllib
 
 
 #: URL template for the ``dvlasearch`` POST requests
@@ -43,7 +45,8 @@ def get_carbon_emission(licence_plate, api_key):
     KeyError
         If the API token or the licence plate is invalid.
     """
-    # Normalise licence plate string TODO
+    # Replace special characters in the licence plate string
+    licence_plate = urllib.parse.quote(licence_plate)
     # Normalise API key string TODO
     full_url = DVLASEARCH_URL_TEMPLATE.format(api_key, licence_plate)
     response = requests.get(full_url, headers=DVLASEARCH_HEADERS).text
