@@ -18,7 +18,8 @@ def transit_cost(steplist, vehicle_footprints):
         distance = 1e-3 * leg['distance']
         footprint=distance*per_km_cost
         total_footprint=total_footprint+footprint
-    days_to_absorb=total_footprint/carbon_foronetree
+    total_footprint=round(total_footprint)
+    days_to_absorb=round(total_footprint/carbon_foronetree)
     return total_footprint,days_to_absorb
 
 def drive_cost(distance, licence_plate):
@@ -30,7 +31,8 @@ def drive_cost(distance, licence_plate):
     per_km_cost=get_carbon_emission(licence_plate, api)
     total_footprint=per_km_cost*distance*1e-3
     carbon_foronetree=60
-    days_to_absorb=total_footprint/carbon_foronetree
+    total_footprint=round(total_footprint)
+    days_to_absorb=round(total_footprint/carbon_foronetree)
     return total_footprint,days_to_absorb
 
 

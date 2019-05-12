@@ -29,7 +29,7 @@ def result():
         drive = gmaps.directions(startLocation,endLocation,mode=modes[0],departure_time=now,region='uk')
         walk=gmaps.directions(startLocation,endLocation,mode=modes[1],departure_time=now,region='uk')
         bicycle=gmaps.directions(startLocation,endLocation,mode=modes[2],departure_time=now,region='uk')
-        transit=gmaps.directions(startLocation,endLocation,mode=modes[3],region='uk')
+        transit=gmaps.directions(startLocation,endLocation,mode=modes[3],departure_time=now,region='uk')
 
         car_distance = drive[0]['legs'][0]['distance']['value'];
         car_time = drive[0]['legs'][0]['duration']['text'];

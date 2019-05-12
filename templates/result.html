@@ -14,7 +14,7 @@
     <div class="container">
         <!-- Content here -->
 
-    <h1>MetroPirates Eco Journey Planner</h1>
+    <h1>Journey Emission Calculator</h1>
 
     <form method="post" action="/result">
         <div class="form-group">
@@ -30,15 +30,23 @@
     <div class="container">
     <div class="row">
         <div class="col">
-        Driving <br>
+        <b>Driving </b><br>
             <div class="row">
-                <div class="col">time</div>
+                <div class="col">Distance for the journey</div>
+                <div class="col">{{ result['driving']['distance'] }}</div>
+            </div>
+            <div class="row">
+                <div class="col">Time for the journey</div>
                 <div class="col">{{ result['driving']['time'] }}</div>
             </div>
             <div class="row">
-                <div class="col">Co2</div>
+                <div class="col">CO2/grams</div>
                 <div class="col">{{ result['driving']['co2'] }}</div>
             </div>
+            <div class="row">
+                <div class="col">Number of days for a single tree to absorb CO2</div>
+                <div class="col">{{ result['driving']['tree'] }}</div>
+            </div>           
 
 
             <iframe
@@ -49,8 +57,25 @@
 
         </div>
         <div class="col">
-            Public transport<br>
-            {{ result['transit']['time']}} {{ result['transit']['co2']}}
+            <b>Public transport</b><br>
+            <div class="row">
+                <div class="col">Distance for the journey</div>
+                <div class="col">{{ result['transit']['distance'] }}</div>
+            </div>
+            <div class="row">
+                <div class="col">Time for the journey</div>
+                <div class="col">{{ result['transit']['time'] }}</div>
+            </div>
+            <div class="row">
+                <div class="col">CO2/grams</div>
+                <div class="col">{{ result['transit']['co2'] }}</div>
+            </div>
+            <div class="row">
+                <div class="col">Number of days for a single tree to absorb CO2</div>
+                <div class="col">{{ result['transit']['tree'] }}</div>
+            </div>   
+
+
             <iframe
                     width="450"
                     frameborder="0" style="border:0"
@@ -60,7 +85,15 @@
     </div>
     <div class="row">
         <div class="col">
-            Cycling<br>
+            <b>Cycling</b><br>
+            <div class="row">
+                <div class="col">Distance for the journey</div>
+                <div class="col">{{ result['cycling']['distance'] }}</div>
+            </div>
+            <div class="row">
+                <div class="col">Time for the journey</div>
+                <div class="col">{{ result['cycling']['time'] }}</div>
+            </div>
             <iframe
                     width="450"
                     frameborder="0" style="border:0"
@@ -70,7 +103,15 @@
 
         </div>
         <div class="col">
-            Walking<br>
+            <b>Walking</b><br>
+            <div class="row">
+                <div class="col">Distance for the journey</div>
+                <div class="col">{{ result['walking']['distance'] }}</div>
+            </div>
+            <div class="row">
+                <div class="col">Time for the journey</div>
+                <div class="col">{{ result['walking']['time'] }}</div>
+            </div>
             <iframe
                     width="450"
                     frameborder="0" style="border:0"
