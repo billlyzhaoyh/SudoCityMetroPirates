@@ -19,17 +19,57 @@
     <form method="post" action="/result">
         <div class="form-group">
             <label for="start">From</label>
-            <input name="start" id="start" class="form-control" type="text" placeholder="London">
+            <input name="start" id="start" class="form-control" type="text" placeholder="e.g. London">
             <label for="end">To</label>
-            <input name="end" id="end" class="form-control" type="text" placeholder="Paris">
+            <input name="end" id="end" class="form-control" type="text" placeholder="e.g. Paris">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
+    <br>
     <div class="container">
-        From {{ start }} to {{ end }} <br>
-        Result : {% print(stepsList) %}
+    <div class="row">
+        <div class="col">
+        Driving <br>
+
+            <iframe
+                    width="450"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB6iXjFokaVryqlrrv7TzD_sUruUbirE4A&origin={{start}}&destination={{end}}&mode=driving" allowfullscreen>
+            </iframe>
+
+        </div>
+        <div class="col">
+            Public transport<br>
+            <iframe
+                    width="450"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB6iXjFokaVryqlrrv7TzD_sUruUbirE4A&origin={{start}}&destination={{end}}&mode=transit" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Cycling<br>
+            <iframe
+                    width="450"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB6iXjFokaVryqlrrv7TzD_sUruUbirE4A&origin={{start}}&destination={{end}}&mode=bicycling" allowfullscreen>
+            </iframe>
+
+
+        </div>
+        <div class="col">
+            Walking<br>
+            <iframe
+                    width="450"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB6iXjFokaVryqlrrv7TzD_sUruUbirE4A&origin={{start}}&destination={{end}}&mode=walking" allowfullscreen>
+            </iframe>
+
+
+        </div>
+    </div>
     </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -37,29 +77,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<iframe
-  width="600"
-  frameborder="0" style="border:0"
-		  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB6iXjFokaVryqlrrv7TzD_sUruUbirE4A&origin={{start}}&destination={{end}}&mode=driving" allowfullscreen>
-</iframe>
-
-<iframe
-  width="600"
-  frameborder="0" style="border:0"
-		  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB6iXjFokaVryqlrrv7TzD_sUruUbirE4A&origin={{start}}&destination={{end}}&mode=transit" allowfullscreen>
-</iframe>
-
-<iframe
-  width="600"
-  frameborder="0" style="border:0"
-		  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB6iXjFokaVryqlrrv7TzD_sUruUbirE4A&origin={{start}}&destination={{end}}&mode=bicycling" allowfullscreen>
-</iframe>
-
-<iframe
-  width="600"
-  frameborder="0" style="border:0"
-		  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB6iXjFokaVryqlrrv7TzD_sUruUbirE4A&origin={{start}}&destination={{end}}&mode=walking" allowfullscreen>
-</iframe>
 
 </body>
 </html>

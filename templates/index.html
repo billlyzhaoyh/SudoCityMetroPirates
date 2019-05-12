@@ -16,15 +16,15 @@
 
     <h1>MetroPirates Eco Journey Planner</h1>
 
-    <form method="post" action="/result">
-        <div class="form-group">
-            <label for="start">From</label>
-            <input name="start" id="start" class="form-control" type="text" placeholder="London">
-            <label for="end">To</label>
-            <input name="end" id="end" class="form-control" type="text" placeholder="Paris">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <form method="post" action="/result">
+            <div class="form-group">
+                <label for="start">From</label>
+                <input name="start" id="start" class="form-control" type="text" placeholder="e.g. London">
+                <label for="end">To</label>
+                <input name="end" id="end" class="form-control" type="text" placeholder="e.g. Paris">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 </div>
     {% if message %}
     <div class="container" style="color: lightcoral">
