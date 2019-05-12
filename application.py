@@ -1,7 +1,9 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from datetime import datetime
 
+import googlemaps
 import json
 
 app = Flask(__name__)
@@ -13,11 +15,22 @@ def homepage():
 @app.route('/result', methods=['POST'])
 def result():
 
-   if request.form.get('start') is not None and request.form.get('end') is not None :
+    startLocation = request.form.get('start')
+    endLocation = request.form.get('end')
 
+    if startLocation is not None and endLocation is not None :
 
+        now = datetime.now()
 
-        return json.dumps({'test': 'xxx'})
-   else :
+        gmaps = googlemaps.Client(key='AIzaSyB6iXjFokaVryqlrrv7TzD_sUruUbirE4A')
+        transit_direction = gmaps.directions(startLocation,
+                                             endLocation,
+                                             mode="transit",
+                                             departure_time=now)
+
+        print(transit_direction.routes)
+
+        return json.dumps(transit_direction)
+    else :
         return 'FAIL'
 
