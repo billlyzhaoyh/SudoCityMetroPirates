@@ -31,6 +31,15 @@
     <div class="row">
         <div class="col">
         Driving <br>
+            <div class="row">
+                <div class="col">time</div>
+                <div class="col">{{ result['driving']['time'] }}</div>
+            </div>
+            <div class="row">
+                <div class="col">Co2</div>
+                <div class="col">{{ result['driving']['co2'] }}</div>
+            </div>
+
 
             <iframe
                     width="450"
@@ -41,6 +50,7 @@
         </div>
         <div class="col">
             Public transport<br>
+            {{ result['transit']['time']}} {{ result['transit']['co2']}}
             <iframe
                     width="450"
                     frameborder="0" style="border:0"
